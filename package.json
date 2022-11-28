@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && node index.js",
-    "dev": "cd server && nodemon index.js"
+    "start": "cd server && nodemon index.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "engines": {
     "node": "14.17.0"
@@ -43,7 +44,8 @@
   "devDependencies": {
     "@babel/core": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "parcel-bundler": "^1.12.5"
   },
   "bugs": {
     "url": "https://github.com/NamanAgarwal214/practicum/issues"

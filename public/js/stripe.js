@@ -4,7 +4,7 @@ import axios from "axios";
 // const Stripe = require("stripe");
 
 const stripe = Stripe(
-  "pk_test_51JkjtvSDrI4DVIWq7NEdFb38cpUwIQWbfEvdZaMEgVjcS2wy5J4uosm0lEmpAqHp8wqW6SX6261fcj3a65toyZos00TXcrxcVW"
+  "pk_test_51M8JtpSFr6rnJ41TBtcTGaox19tXeApLciFlUJ8O4J597QsUu3hCUoKlIDlSLZrdPJg7i5MIA7Sb0caKZ2eqSb9R00MNKyuJyY"
 );
 
 export const buyPost = async (postId) => {

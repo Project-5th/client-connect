@@ -20,7 +20,7 @@
   <!-- navigtaion -->
   <div class="nav-container">
     <div class="navigation">
-      <ul style="padding-left: 0 !important;">
+      <ul style="padding-left: 0 !important">
         <li>
           <a href="/dashboard">
             <span class="icon">
@@ -53,14 +53,6 @@
               <ion-icon name="cart-outline"></ion-icon>
             </span>
             <span class="title">Customer</span>
-          </a>
-        </li>
-        <li>
-          <a href="/videocall">
-            <span class="icon">
-              <ion-icon name="videocam-outline"></ion-icon>
-            </span>
-            <span class="title">Video Call</span>
           </a>
         </li>
         <!-- <li>
@@ -108,20 +100,36 @@
         <div class="row">
           <div class="col-sm-5">
             <div class="p-3 border bg-light pic-box">
-              <form style="font-size: 1rem; display: flex; justify-content: center; align-items: center;"
-                action="/uploadPhoto" method="POST" enctype="multipart/form-data">
-                <div class="profile-pic-div" style="position: relative; height: 180px;">
-                  <div class="imgdiv" style="display: flex; justify-content: center;align-items: center;height: 180px;">
-                    <img style="border-radius: 50% !important; margin: auto;" src="../img/users/<%=pic%>"
-                      alt="<%=name%>" height="180px" width="180px" id="photo" />
+              <form style="
+                    font-size: 1rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  " action="/uploadPhoto" method="POST" enctype="multipart/form-data">
+                <div class="profile-pic-div" style="position: relative; height: 180px">
+                  <div class="imgdiv" style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 180px;
+                      ">
+                    <img style="border-radius: 50% !important; margin: auto" src="<%=pic.url%>" alt="<%=name%>"
+                      height="180px" width="180px" id="photo" />
                   </div>
-                  <div class="uploaddiv"
-                    style="margin: 0.5rem; height: fit-content;z-index: 100; position: absolute; bottom:0; zoom: 80%; left: 20px; ">
+                  <div class="uploaddiv" style="
+                        margin: 0.5rem;
+                        height: fit-content;
+                        z-index: 100;
+                        position: absolute;
+                        bottom: 0;
+                        zoom: 80%;
+                        left: 20px;
+                      ">
                     <input type="file" name="photo" id="file" />
                     <label for="file" id="uploadBtn">Choose Photo</label>
                   </div>
                 </div>
-                <br>
+                <br />
                 <button style="width: fit-content" type="submit">
                   Upload
                 </button>
@@ -195,7 +203,7 @@
               </div>
             </div> -->
           <div class="col-sm-6">
-            <div class="p-3 border bg-light content-box" style="position: relative;">
+            <div class="p-3 border bg-light content-box" style="position: relative">
               <form action="/updateProfile" method="post">
                 <legend>Personal Info</legend>
                 <div>
@@ -234,9 +242,14 @@
                   <span>Save Changes</span>
                 </button>
               </form>
-              <a style="height: fit-content; width: fit-content; position: absolute; bottom: 40px; right: 35px"
-                href="/deleteUser/<%=id%>">
-                <button class="cta" style="background-color:#EB5353 ;" type="submit">
+              <a style="
+                    height: fit-content;
+                    width: fit-content;
+                    position: absolute;
+                    bottom: 40px;
+                    right: 35px;
+                  " href="/deleteUser/<%=id%>">
+                <button class="cta" style="background-color: #eb5353" type="submit">
                   <span>Delete Account</span>
                 </button>
               </a>

@@ -21,7 +21,7 @@
 <body>
   <div class="container1">
     <div class="navigation">
-      <ul style="padding: 0 !important;">
+      <ul style="padding: 0 !important">
         <li>
           <a href="/dashboard">
             <span class="icon">
@@ -54,14 +54,6 @@
               <ion-icon name="cart-outline"></ion-icon>
             </span>
             <span class="title">Customer</span>
-          </a>
-        </li>
-        <li>
-          <a href="/videocall">
-            <span class="icon">
-              <ion-icon name="videocam-outline"></ion-icon>
-            </span>
-            <span class="title">Video Call</span>
           </a>
         </li>
         <!-- <li>
@@ -100,10 +92,15 @@
         </div>
         <!-- userimg -->
         <div class="user">
-          <img src="/img/users/<%=pic%>" alt="USER" height="50px" />
+          <img src="<%=pic.url%>" alt="USER" height="50px" />
         </div>
       </div>
-      <div style="display: flex; gap: 1rem; padding: 1rem; margin-left: 3vw !important;">
+      <div style="
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            margin-left: 3vw !important;
+          ">
         <%for(var i=0; i < post.length; i++){%>
           <div style="
               display: flex;
@@ -120,8 +117,8 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <%for(var j=0;j< post[i].image.length;j++){ %>
-                      <div class="carousel-item" style="border-radius:12px">
-                        <img src="/img/posts/<%=post[i].image[j]%>" class="d-block w-100" alt="..." />
+                      <div class="carousel-item" style="border-radius: 12px">
+                        <img src="<%=post[i].image[j].url%>" class="d-block w-100" alt="..." />
                       </div>
                       <%}%>
                   </div>
@@ -149,8 +146,8 @@
                 </div>
                 <div class="price-buy">
                   <div>
-                    <p style="margin:0 !important;" class="price">
-                      <span style="font-size: 1.5rem; font-weight: bolder; ">₹</span>
+                    <p style="margin: 0 !important" class="price">
+                      <span style="font-size: 1.5rem; font-weight: bolder">₹</span>
                       <%=post[i].price%>
                     </p>
                   </div>
