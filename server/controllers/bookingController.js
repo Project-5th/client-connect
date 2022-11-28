@@ -30,6 +30,14 @@ exports.getCheckoutSession = async (req, res, next) => {
         },
       ],
     });
+
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: post.price * 100,
+      currency: "inr",
+      payment_method_types: ["card"],
+      receipt_email: user.email,
+    });
+
     res.status(200).json({
       status: "success",
       session,
