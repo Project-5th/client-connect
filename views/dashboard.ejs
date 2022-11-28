@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/navmenu.css" />
   <link rel="stylesheet" href="/style_dashboard.css" />
   <link rel="stylesheet" href="/ad-post-new.css">
-  
+
   <script src="https://js.stripe.com/v3/"></script>
   <style>
     .container1 {
@@ -83,6 +83,14 @@
               <ion-icon name="cart-outline"></ion-icon>
             </span>
             <span class="title">Customer</span>
+          </a>
+        </li>
+        <li>
+          <a href="/videocall">
+            <span class="icon">
+              <ion-icon name="videocam-outline"></ion-icon>
+            </span>
+            <span class="title">Video Call</span>
           </a>
         </li>
         <!-- <li>
@@ -265,7 +273,8 @@
                       <!-- carousel -->
                       <!-- <div><button>Buy</button></div> -->
                       <div>
-                        <button id="buyBtn" data-post-id="<%=post[i]._id%>">Buy</button></div>
+                        <button id="buyBtn" data-post-id="<%=post[i]._id%>">Buy</button>
+                      </div>
                       <div><a style="text-decoration: none !important" href="/post/deletePost/<%=post[i]._id%>">
                           <button>Delete</button></a></div>
                     </div>
@@ -333,7 +342,7 @@
 
   </script>
   <!-- <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script> -->
-    
+
   <!-- <script type="module" src="/js/index.js"></script> -->
 </body>
 <!-- <script type="text/javascript">

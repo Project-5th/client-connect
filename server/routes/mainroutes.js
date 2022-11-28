@@ -270,4 +270,12 @@ router.get(
   }
 );
 
+router.get("/videocall", (req, res) => {
+  res.render("videoCall");
+});
+
+router.get("/chat", (req, res) => {
+  res.render("chat");
+});
+
 module.exports = router;
