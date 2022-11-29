@@ -8,7 +8,7 @@ const cloudinary = require("../utils/cloudinary");
 exports.upload = async (req, res, next) => {
   const file = req.files.image;
   let imageBuffer = [];
-  console.log(req);
+  // console.log(req);
   for (let i = 0; i < file.length; i++) {
     const result = await cloudinary.uploader.upload(file[i].tempFilePath, {
       public_id: `${Date.now()}`,
