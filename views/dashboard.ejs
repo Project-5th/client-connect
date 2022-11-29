@@ -17,7 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
   <!-- SLICK CDN -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/favicon.png" />
   <link rel="stylesheet" href="/global_css.css" />
   <link rel="stylesheet" href="/navmenu.css" />
@@ -114,7 +115,7 @@
             <span class="icon">
               <ion-icon name="person-circle-outline"></ion-icon>
             </span>
-            <span class="title">Edit Profile</span>
+            <span class="title">Profile</span>
           </a>
         </li>
         <li>
@@ -151,37 +152,53 @@
         <p style="opacity: 0.4">Services:</p>
         <div class="slider">
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=ApplianceRepair" target="_blank"><img src="/assets/appliancerepair.jpg"
                 alt="Appliance Repair" class="img-responsive" />Appliance Repair
             </a>
+            </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=Painting" target="_blank"><img src="/assets/painting.jpg" alt="Painting"
                 class="img-responsive" />Painting</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=Cleaning" target="_blank"><img src="/assets/cleaning.jpg" alt="Cleaning"
                 class="img-responsive" />Cleaning</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=Plumbing" target="_blank"><img src="/assets/plumbing.jpg" alt="Plumbing"
                 class="img-responsive" />Plumbing</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=PestControl" target="_blank"><img src="/assets/pestcontrol.jpg" alt="Pest Control"
                 class="img-responsive" />Pest Control</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post/?category=ElectricalRepair" target="_blank"><img src="/assets/electricalrepairing.jpg"
                 alt="Electrical" class="img-responsive" />Electrical Repairing</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
+            <div>
             <a href="/post?category=Carpenter" target="_blank"><img src="/assets/carpenter.jpg" alt="Carpenter"
                 class="img-responsive" />Carpenter</a>
+                </div>
           </div>
           <div class="slides slide slick-slide">
-            <a href="/post/?category=CarWash" target="_blank"><img src="/assets/carwash.jpg" alt="CarWash"
+            <div>
+                <a href="/post/?category=CarWash" target="_blank"><img src="/assets/carwash.jpg" alt="CarWash"
                 class="img-responsive" />Car Wash</a>
+            </div>
           </div>
         </div>
       </section>
@@ -319,11 +336,54 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="/navmenu.js"></script>
   <script src="/script_dashboard.js"></script>
+  <!-- JQUERY CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="/js/bundle.js"></script>
   <!-- SCRIPT FOR SLIDER -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- slick slide -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $('.slider').slick({
+  dots: false,
+  infinite: true,
+  autoplay:true,
+  autoplaySpeed:1000,
+  speed: 6000,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+         arrows:true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+         arrows:true,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         arrows:true,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+  </script>
   <!-- <script type="text/javascript">
     window.history.forward();
     function noBack() {
