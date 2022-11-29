@@ -102,14 +102,14 @@
             <span class="title">Chat</span>
           </a>
         </li> -->
-        <li>
+        <!-- <li>
           <a href="#">
             <span class="icon">
               <ion-icon name="help-circle-outline"></ion-icon>
             </span>
             <span class="title">Help</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="/profile/<%=id%>">
             <span class="icon">
@@ -405,6 +405,22 @@
   <!-- <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script> -->
 
   <!-- <script type="module" src="/js/index.js"></script> -->
+  <script>
+    (function (d, t) {
+        var BASE_URL = "https://app.chatwoot.com";
+        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+            window.chatwootSDK.run({
+                websiteToken: '6M9jRo9Y5UWA88kcf2MbHBnn',
+                baseUrl: BASE_URL
+            })
+        }
+    })(document, "script");
+</script>
 </body>
 <!-- <script type="text/javascript">
   window.history.forward();
