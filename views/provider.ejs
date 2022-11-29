@@ -95,14 +95,14 @@
             <span class="title">Chat</span>
           </a>
         </li> -->
-        <li>
+        <!-- <li>
           <a href="#">
             <span class="icon">
               <ion-icon name="help-circle-outline"></ion-icon>
             </span>
             <span class="title">Help</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="/profile/<%=id%>">
             <span class="icon">
@@ -304,16 +304,76 @@
   <!-- JS FILE -->
   <script src="/navmenu.js"></script>
   <script src="/script_dashboard.js"></script>
+  <!-- JQUERY CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="/js/bundle.js"></script>
   <!-- SCRIPT FOR SLIDER -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- slick slide -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $('.slider').slick({
+  dots: false,
+  infinite: true,
+  autoplay:true,
+  autoplaySpeed:1000,
+  speed: 6000,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+         arrows:true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+         arrows:true,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         arrows:true,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
   <!-- <script type="text/javascript">
     window.history.forward();
     function noBack() {
       window.history.forward();
     }
   </script> -->
+  <script>
+    (function (d, t) {
+        var BASE_URL = "https://app.chatwoot.com";
+        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+            window.chatwootSDK.run({
+                websiteToken: '6M9jRo9Y5UWA88kcf2MbHBnn',
+                baseUrl: BASE_URL
+            })
+        }
+    })(document, "script");
+</script>
 </body>
 <!-- <script type="text/javascript">
   window.history.forward();
