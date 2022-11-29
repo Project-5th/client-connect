@@ -106,29 +106,47 @@
             <ion-icon name="menu-outline"></ion-icon>
           </div>
         </div>
-      </div>
-      <div class="container px-4 mb-4">
-        <h3>Client Connect</h3>
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="p-3 border bg-light pic-box">
-              <form style="
+        <div class="container px-4 mb-4">
+          <h3>Client Connect</h3>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="p-3 border bg-light pic-box">
+                <form
+                  style="
                     font-size: 1rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                  " action="/uploadPhoto" method="POST" enctype="multipart/form-data">
-                <div class="profile-pic-div" style="position: relative; height: 180px">
-                  <div class="imgdiv" style="
+                  "
+                  action="/uploadPhoto"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <div
+                    class="profile-pic-div"
+                    style="position: relative; height: 180px"
+                  >
+                    <div
+                      class="imgdiv"
+                      style="
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         height: 180px;
-                      ">
-                    <img style="border-radius: 50% !important; margin: auto" src="<%=pic.url%>" alt="<%=name%>"
-                      height="180px" width="180px" id="photo" />
-                  </div>
-                  <div class="uploaddiv" style="
+                      "
+                    >
+                      <img
+                        style="border-radius: 50% !important; margin: auto"
+                        src="<%=pic.url%>"
+                        alt="<%=name%>"
+                        height="180px"
+                        width="180px"
+                        id="photo"
+                      />
+                    </div>
+                    <div
+                      class="uploaddiv"
+                      style="
                         margin: 0.5rem;
                         height: fit-content;
                         z-index: 100;
@@ -136,34 +154,30 @@
                         bottom: 0;
                         zoom: 80%;
                         left: 20px;
-                      ">
-                    <input type="file" name="photo" id="file" />
-                    <label for="file" id="uploadBtn">Choose Photo</label>
+                      "
+                    >
+                      <input type="file" name="photo" id="file" />
+                      <label for="file" id="uploadBtn">Choose Photo</label>
+                    </div>
                   </div>
-                </div>
-                <br />
-                <button style="width: fit-content" type="submit">
-                  Upload
-                </button>
-              </form>
-              <div class="userinfo">
-                <div>
-                  <h6>Name:</h6>
-                  <p class="name">
-                    <%= name %>
-                  </p>
-                </div>
-                <div>
-                  <h6>Phone:</h6>
-                  <p class="phoneno">
-                    <%=phone%>
-                  </p>
-                </div>
-                <div>
-                  <h6>Email:</h6>
-                  <p class="email">
-                    <%=email%>
-                  </p>
+                  <br />
+                  <button style="width: fit-content" type="submit">
+                    Upload
+                  </button>
+                </form>
+                <div class="userinfo">
+                  <div>
+                    <h6>Name:</h6>
+                    <p class="name"><%= name %></p>
+                  </div>
+                  <div>
+                    <h6>Phone:</h6>
+                    <p class="phoneno"><%=phone%></p>
+                  </div>
+                  <div>
+                    <h6>Email:</h6>
+                    <p class="email"><%=email%></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -213,25 +227,43 @@
                 </div>
               </div>
             </div> -->
-          <div class="col-sm-6">
-            <div class="p-3 border bg-light content-box" style="position: relative">
-              <form action="/updateProfile" method="post">
-                <legend>Personal Info</legend>
-                <div>
-                  <p>Name:</p>
-                  <input type="text" name="name" id="naam" value="<%=name%>"
-                    onchange="changeHandler(this.name, this.value)" />
-                </div>
-                <div>
-                  <p>Phone:</p>
-                  <input type="tel" name="phone" id="phone" value="<%=phone%>"
-                    onchange="changeHandler(this.name, this.value)" />
-                </div>
-                <div>
-                  <p>Email:</p>
-                  <input type="email" name="email" id="email" value="<%=email%>"
-                    onchange="changeHandler(this.name, this.value)" />
-                </div>
+            <div class="col-sm-6">
+              <div
+                class="p-3 border bg-light content-box"
+                style="position: relative"
+              >
+                <form action="/updateProfile" method="post">
+                  <legend>Personal Info</legend>
+                  <div>
+                    <p>Name:</p>
+                    <input
+                      type="text"
+                      name="name"
+                      id="naam"
+                      value="<%=name%>"
+                      onchange="changeHandler(this.name, this.value)"
+                    />
+                  </div>
+                  <div>
+                    <p>Phone:</p>
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      value="<%=phone%>"
+                      onchange="changeHandler(this.name, this.value)"
+                    />
+                  </div>
+                  <div>
+                    <p>Email:</p>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value="<%=email%>"
+                      onchange="changeHandler(this.name, this.value)"
+                    />
+                  </div>
 
                   <!-- <div>
                     <p>Expertise:</p>
@@ -248,22 +280,30 @@
                     </div>
                   </div>
                   <br /> -->
-                <br />
-                <button class="cta" type="submit">
-                  <span>Save Changes</span>
-                </button>
-              </form>
-              <a style="
+                  <br />
+                  <button class="cta" type="submit">
+                    <span>Save Changes</span>
+                  </button>
+                </form>
+                <a
+                  style="
                     height: fit-content;
                     width: fit-content;
                     position: absolute;
                     bottom: 40px;
                     right: 35px;
-                  " href="/deleteUser/<%=id%>">
-                <button class="cta" style="background-color: #eb5353" type="submit">
-                  <span>Delete Account</span>
-                </button>
-              </a>
+                  "
+                  href="/deleteUser/<%=id%>"
+                >
+                  <button
+                    class="cta"
+                    style="background-color: #eb5353"
+                    type="submit"
+                  >
+                    <span>Delete Account</span>
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
