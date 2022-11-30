@@ -17,9 +17,9 @@ const filterObj = (obj, ...allowedFields) => {
 };
 
 exports.upload = async (req, res, next) => {
-  const file = req.files.image;
+  const file = req.files.photo;
   const result = await cloudinary.uploader.upload(file.tempFilePath, {
-    public_id: `${Date.now()}`,
+    public_id: `${Date.now()}-users`,
     folder: "users",
   });
 
