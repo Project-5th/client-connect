@@ -1,5 +1,6 @@
 /* eslint-disable */
 import axios from "axios";
+import { showAlert } from "./alerts";
 // const axios = require("axios");
 // const Stripe = require("stripe");
 
@@ -17,5 +18,6 @@ export const buyPost = async (postId) => {
     });
   } catch (error) {
     console.log(error.message);
+    showAlert("error", error.message);
   }
 };
