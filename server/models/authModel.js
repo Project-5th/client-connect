@@ -1,12 +1,24 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const authSchema = new mongoose.Schema(
+  {
     googleid: String,
     name: String,
     email: String,
-    photo: String
+    photo: String,
+    posts: [{ type: mongoose.Schema.ObjectId, ref: "Post" }],
+  },
+  {
+    timestamps: true,
+  }
+);
+
+authSchema.pre(/^find/, function (next) {
+  this.populate("posts");
+
+  next();
 });
 
-const authuser = mongoose.model("authUser", userSchema);
+const authuser = mongoose.model("authUser", authSchema);
 
 module.exports = authuser;

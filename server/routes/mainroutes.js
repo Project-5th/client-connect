@@ -10,6 +10,7 @@ const authcheck = (req, res, next) => {
   if (!req.user) {
     res.redirect("/");
   } else {
+    res.locals.id = req.user._id;
     next();
   }
 };
@@ -21,25 +22,32 @@ router.get("/", (req, res) => {
 // ------------------- Routing for dashboard using google oauth--------------------
 
 var UserDetails;
-router.get("/Odashboard", authcheck, async (req, res) => {
-  UserDetails = req.user;
-  let auth_olduser = await authuser.find({ email: UserDetails.email });
-  // console.log(req.path);
-  auth_olduser.forEach((obj) => {
-    UserDetails = obj;
-  });
-  // console.log(UserDetails);
-  try {
-    res.render("auth-dashboard", {
-      id: UserDetails._id,
-      naam: UserDetails.name,
-      gmail: UserDetails.email,
-      pic: UserDetails.photo,
+router.get(
+  "/Odashboard",
+  authcheck,
+  // authController.protect,
+  postController.getAuthUserPosts,
+  async (req, res) => {
+    UserDetails = req.user;
+    let auth_olduser = await authuser.find({ email: UserDetails.email });
+    // console.log(req.path);
+    auth_olduser.forEach((obj) => {
+      UserDetails = obj;
     });
-  } catch (error) {
-    res.redirect("/");
+    // console.log(UserDetails);
+    try {
+      res.render("auth-dashboard", {
+        id: UserDetails._id,
+        naam: UserDetails.name,
+        gmail: UserDetails.email,
+        num: res.locals.number,
+        pic: UserDetails.photo,
+      });
+    } catch (error) {
+      res.redirect("/");
+    }
   }
-});
+);
 
 var dbuser;
 router.get("/O-profile/:id", authcheck, async (req, res) => {
@@ -57,7 +65,6 @@ router.get("/O-profile/:id", authcheck, async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-  // console.log(user, req.params.id);
 });
 // ------------------- end of Routing for dashboard using google oauth--------------------
 

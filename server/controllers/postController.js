@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const User = require("../models/userModel");
 const cloudinary = require("../utils/cloudinary");
+const authuser = require("../models/authModel");
 
 exports.upload = async (req, res, next) => {
   const file = req.files.image;
@@ -101,6 +102,17 @@ exports.getPosts = async (req, res, next) => {
 exports.getUserPosts = async (req, res, next) => {
   try {
     const user = await User.findById(res.locals.id);
+    res.locals.number = user.posts.length;
+    res.locals.data = user.posts;
+    next();
+  } catch (error) {
+    res.json(error.message);
+  }
+};
+
+exports.getAuthUserPosts = async (req, res, next) => {
+  try {
+    const user = await authuser.findById(res.locals.id);
     res.locals.number = user.posts.length;
     res.locals.data = user.posts;
     next();
