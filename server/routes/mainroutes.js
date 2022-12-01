@@ -28,7 +28,7 @@ router.get("/Odashboard", authcheck, async (req, res) => {
   auth_olduser.forEach((obj) => {
     UserDetails = obj;
   });
-  // console.log(UserDetails.id);
+  // console.log(UserDetails);
   try {
     res.render("auth-dashboard", {
       id: UserDetails._id,
